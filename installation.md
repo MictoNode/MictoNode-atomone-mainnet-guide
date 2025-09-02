@@ -184,6 +184,7 @@ if [ -n "$LATEST_SNAPSHOT" ]; then
 else
   echo "No snapshot found"
 fi
+```
 
 ### ➡️ Let's get started
 
