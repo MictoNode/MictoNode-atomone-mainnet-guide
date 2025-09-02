@@ -169,7 +169,7 @@ echo "Atomone Snapshot Height: $(curl -s https://files.mictonode.com/atomone/sna
 ```
 
 ```bash
-exrpd tendermint unsafe-reset-all --home $HOME/.atomone --keep-addr-book
+atomoned tendermint unsafe-reset-all --home $HOME/.atomone --keep-addr-book
 
 SNAPSHOT_URL="https://files.mictonode.com/atomone/snapshot/"
 LATEST_SNAPSHOT=$(curl -s $SNAPSHOT_URL | grep -oP 'atomone_\d+\.tar\.lz4' | sort -t_ -k2 -n | tail -n 1)
