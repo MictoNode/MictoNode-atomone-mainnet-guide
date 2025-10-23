@@ -34,6 +34,7 @@ $HOME/.atomone/cosmovisor/upgrades/v3/bin/atomoned version
 #### 1. Stop the Service and Download the Binary
 
 ```bash
+sudo systemctl stop atomoned
 cd $HOME
 mkdir -p $HOME/.atomone/cosmovisor/upgrades/v3/bin
 cd $HOME
