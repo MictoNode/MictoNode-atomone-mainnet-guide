@@ -22,8 +22,8 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.atomone/
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl restart exrpd
-sudo journalctl -u exrpd -f -o cat
+sudo systemctl restart atomoned
+sudo journalctl -u atomoned -f -o cat
 ```
 
 ### ➡️ Number of peers to which the node connects
