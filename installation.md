@@ -4,7 +4,7 @@
 
 ```bash
 sudo apt -q update
-sudo apt -qy install curl git jq lz4 build-essential
+sudo apt -qy install curl git jq lz4 build-essential zstd
 sudo apt -qy upgrade
 sudo apt-get update && apt-get install -y libssl-dev
 ```
@@ -107,8 +107,8 @@ sed -i -e "s|^node *=.*|node = \"tcp://localhost:${ATOMONE_PORT}657\"|" $HOME/.a
 > Updated every 6 hours.
 
 ```bash
-curl https://files.mictonode.com/atomone/genesis/genesis.json -o ~/.atomone/config/genesis.json
-curl https://files.mictonode.com/atomone/addrbook/addrbook.json -o ~/.atomone/config/addrbook.json
+curl https://files.mictonode.com/configs/atomone/genesis.json -o ~/.atomone/config/genesis.json
+curl https://files.mictonode.com/configs/atomone/addrbook.json -o ~/.atomone/config/addrbook.json
 ```
 
 ### ➡️ Port
@@ -165,19 +165,20 @@ sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.atomone/config/config.toml
 
 Check snapshot height
 ```bash
-echo "Atomone Snapshot Height: $(curl -s https://files.mictonode.com/atomone/snapshot/block-height.txt)"
+echo "Atomone Snapshot Height: $(curl -s https://files.mictonode.com/snapshots/atomone/block-height.txt)"
 ```
 
 ```bash
 atomoned tendermint unsafe-reset-all --home $HOME/.atomone --keep-addr-book
 
-SNAPSHOT_URL="https://files.mictonode.com/atomone/snapshot/"
-LATEST_SNAPSHOT=$(curl -s $SNAPSHOT_URL | grep -oP 'atomone_\d+\.tar\.lz4' | sort -t_ -k2 -n | tail -n 1)
+SNAPSHOT_URL="https://files.mictonode.com/snapshots/atomone/"
+LATEST_SNAPSHOT=$(curl -s $SNAPSHOT_URL | grep -oP 'atomone_\d+\.tar\.zst' | sort -t_ -k2 -n | tail -n 1)
 
 if [ -n "$LATEST_SNAPSHOT" ]; then
   FULL_URL="${SNAPSHOT_URL}${LATEST_SNAPSHOT}"
   if curl -s --head "$FULL_URL" | head -n 1 | grep "200" > /dev/null; then
-    curl "$FULL_URL" | lz4 -dc - | tar -xf - -C $HOME/.atomone
+    echo "Downloading and extracting $LATEST_SNAPSHOT..."
+    curl "$FULL_URL" | zstd -dc - | tar -xf - -C $HOME/.atomone
   else
     echo "Snapshot URL not accessible"
   fi
