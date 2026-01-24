@@ -1,4 +1,29 @@
-# v3.0.0 Update
+# v3.1.0 Update (hotfix)
+
+```bash
+sudo systemctl stop atomoned
+```
+
+```bash
+wget https://github.com/atomone-hub/atomone/releases/download/v3.1.0/atomoned-v3.1.0-linux-amd64 -O $HOME/.atomone/cosmovisor/upgrades/v3/bin/atomoned
+```
+
+```bash
+chmod +x $HOME/.atomone/cosmovisor/upgrades/v3/bin/atomoned
+```
+
+```bash
+sudo ln -sfn $HOME/.atomone/cosmovisor/upgrades/v3 $HOME/.atomone/cosmovisor/current
+sudo ln -sfn $HOME/.atomone/cosmovisor/current/bin/atomoned /usr/local/bin/atomoned
+```
+
+```bash
+sudo systemctl restart atomoned
+sudo journalctl -fu atomoned -o cat
+```
+
+
+# v3.0.3 Update (old)
 
 ## BEFORE THE UPGRADE ([BLOCK 5902000](https://explorer.mictonode.com/Atomone-Mainnet/block/5902000))
 
