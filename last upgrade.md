@@ -1,4 +1,4 @@
-# v3.2.0 Update (hotfix)
+# v3.3.0 Update (hotfix)
 
 ## BEFORE THE UPGRADE ([BLOCK 5902000](https://explorer.mictonode.com/Atomone-Mainnet/block/5902000))
 
@@ -13,7 +13,7 @@ cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone
 cd atomone
-git checkout v3.2.0
+git checkout v3.3.0
 make build
 mv $HOME/atomone/build/atomoned $HOME/.atomone/cosmovisor/upgrades/v3/bin/
 cd $HOME
@@ -25,7 +25,7 @@ cd $HOME
 $HOME/.atomone/cosmovisor/upgrades/v3/bin/atomoned version
 ```
 
-> **Note:** If the version shows as `v3.2.0`, the preparation is complete.
+> **Note:** If the version shows as `v3.3.0`, the preparation is complete.
 
 ---
 
@@ -41,7 +41,7 @@ cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone
 cd atomone
-git checkout v3.2.0
+git checkout v3.3.0
 make build
 mv $HOME/atomone/build/atomoned $HOME/.atomone/cosmovisor/upgrades/v3/bin/
 cd $HOME
