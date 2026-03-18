@@ -107,8 +107,8 @@ sed -i -e "s|^node *=.*|node = \"tcp://localhost:${ATOMONE_PORT}657\"|" $HOME/.a
 > Updated every 6 hours.
 
 ```bash
-curl https://files.mictonode.com/configs/atomone/genesis.json -o ~/.atomone/config/genesis.json
-curl https://files.mictonode.com/configs/atomone/addrbook.json -o ~/.atomone/config/addrbook.json
+curl https://server-3.itrocket.net/mainnet/atomone/genesis.json -o ~/.atomone/config/genesis.json
+curl https://server-3.itrocket.net/mainnet/atomone/addrbook.json -o ~/.atomone/config/addrbook.json
 ```
 
 ### ➡️ Port
@@ -161,7 +161,11 @@ sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.atomone/config/config.toml
 sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.atomone/config/config.toml
 ```
 
-### ➡️ Starter Snap
+### ➡️ Starter Snap (Under Maintenance)
+
+> 🔧 This service is temporarily unavailable due to maintenance. Please use [ITRocket](https://itrocket.net/services/mainnet/atomone/) as an alternative.
+
+---
 
 Check snapshot height
 ```bash
@@ -279,7 +283,7 @@ sed -i "/ATOMONE_PORT_/d" $HOME/.bash_profile
 ### ➡️ Block check
 
 ```bash
-local_height=$(curl -s localhost:${ATOMONE_PORT}657/status | jq -r .result.sync_info.latest_block_height); network_height=$(curl -s https://atomone-mainnet-rpc.mictonode.com/status | jq -r .result.sync_info.latest_block_height); blocks_left=$((network_height - local_height)); echo "Your node height: $local_height"; echo "Network height: $network_height"; echo "Blocks left: $blocks_left"
+local_height=$(curl -s localhost:${ATOMONE_PORT}657/status | jq -r .result.sync_info.latest_block_height); network_height=$(curl -s https://atomone-mainnet-rpc.itrocket.net/status | jq -r .result.sync_info.latest_block_height); blocks_left=$((network_height - local_height)); echo "Your node height: $local_height"; echo "Network height: $network_height"; echo "Blocks left: $blocks_left"
 ```
 
 * Your node height - the current block of your node

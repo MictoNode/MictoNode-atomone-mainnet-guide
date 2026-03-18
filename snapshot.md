@@ -1,4 +1,8 @@
-# ♻️ Snapshot
+# ♻️ Snapshot (Under Maintenance)
+
+> 🔧 Our snapshot service is temporarily unavailable due to maintenance. Please use [ITRocket](https://itrocket.net/services/mainnet/atomone/) as an alternative.
+
+---
 
 > **Info**  
 > Updated every 12 hours.  

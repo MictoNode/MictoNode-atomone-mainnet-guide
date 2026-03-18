@@ -1,7 +1,7 @@
 # 🍀 Fresh Peers
 
 ```bash
-URL="https://atomone-mainnet-rpc.mictonode.com/net_info"
+URL="https://atomone-mainnet-rpc.itrocket.net/net_info"
 ```
 
 ```bash
