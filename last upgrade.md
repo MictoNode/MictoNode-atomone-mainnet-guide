@@ -1,6 +1,6 @@
-# v3.3.0 Update (hotfix)
+# v4.0.0 Update (hotfix)
 
-## BEFORE THE UPGRADE ([BLOCK 5902000](https://explorer.mictonode.com/Atomone-Mainnet/block/5902000))
+## BEFORE THE UPGRADE ([BLOCK 9550000](https://explorer.mictonode.com/Atomone-Mainnet/block/9550000))
 
 ### Preparing for the Upgrade
 
@@ -8,49 +8,49 @@
 
 ```bash
 cd $HOME
-mkdir -p $HOME/.atomone/cosmovisor/upgrades/v3/bin
+mkdir -p $HOME/.atomone/cosmovisor/upgrades/v4/bin
 cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone
 cd atomone
-git checkout v3.3.0
+git checkout v4.0.0
 make build
-mv $HOME/atomone/build/atomoned $HOME/.atomone/cosmovisor/upgrades/v3/bin/
+mv $HOME/atomone/build/atomoned $HOME/.atomone/cosmovisor/upgrades/v4/bin/
 cd $HOME
 ```
 
 #### 2. Check Version
 
 ```bash
-$HOME/.atomone/cosmovisor/upgrades/v3/bin/atomoned version
+$HOME/.atomone/cosmovisor/upgrades/v4/bin/atomoned version
 ```
 
-> **Note:** If the version shows as `v3.3.0`, the preparation is complete.
+> **Note:** If the version shows as `v4.0.0`, the preparation is complete.
 
 ---
 
-## AFTER THE UPGRADE ([BLOCK 5902000](https://explorer.mictonode.com/Atomone-Mainnet/block/5902000))
+## AFTER THE UPGRADE ([BLOCK 9550000](https://explorer.mictonode.com/Atomone-Mainnet/block/9550000))
 
 #### 1. Stop the Service and Download the Binary
 
 ```bash
 sudo systemctl stop atomoned
 cd $HOME
-mkdir -p $HOME/.atomone/cosmovisor/upgrades/v3/bin
+mkdir -p $HOME/.atomone/cosmovisor/upgrades/v4/bin
 cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone
 cd atomone
-git checkout v3.3.0
+git checkout v4.0.0
 make build
-mv $HOME/atomone/build/atomoned $HOME/.atomone/cosmovisor/upgrades/v3/bin/
+mv $HOME/atomone/build/atomoned $HOME/.atomone/cosmovisor/upgrades/v4/bin/
 cd $HOME
 ```
 
 #### 2. Activate the New Version
 
 ```bash
-sudo ln -sfn $HOME/.atomone/cosmovisor/upgrades/v3 $HOME/.atomone/cosmovisor/current
+sudo ln -sfn $HOME/.atomone/cosmovisor/upgrades/v4 $HOME/.atomone/cosmovisor/current
 sudo ln -sfn $HOME/.atomone/cosmovisor/current/bin/atomoned /usr/local/bin/atomoned
 ```
 
