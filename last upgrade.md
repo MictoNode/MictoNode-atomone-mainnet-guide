@@ -13,7 +13,7 @@ cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone
 cd atomone
-git checkout v4.0.0
+git checkout v4.0.1
 make build
 mv $HOME/atomone/build/atomoned $HOME/.atomone/cosmovisor/upgrades/v4/bin/
 cd $HOME
@@ -25,7 +25,7 @@ cd $HOME
 $HOME/.atomone/cosmovisor/upgrades/v4/bin/atomoned version
 ```
 
-> **Note:** If the version shows as `v4.0.0`, the preparation is complete.
+> **Note:** If the version shows as `v4.0.1`, the preparation is complete.
 
 ---
 
@@ -41,7 +41,7 @@ cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone
 cd atomone
-git checkout v4.0.0
+git checkout v4.0.1
 make build
 mv $HOME/atomone/build/atomoned $HOME/.atomone/cosmovisor/upgrades/v4/bin/
 cd $HOME
