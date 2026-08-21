@@ -1,4 +1,4 @@
-# 🔌 Installatio
+# 🔌 Installation
 
 ## 1️⃣ Installation packages and dependencies
 
